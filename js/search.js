@@ -30,7 +30,7 @@ function searchInitialize(url) {
     searchBtn.style.display = "flex"
 
     document.addEventListener('keydown', e => {
-      if ((e.ctrlKey || e.metaKey) && e.key == "k") {
+      if ((e.ctrlKey || e.metaKey) && e.key == "i") {
         if (searchStatus) closeSearchDialog()
         else showSearchDialog()
       }

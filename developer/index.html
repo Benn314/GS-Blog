@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <title>
       
-        Ben's Blog
+        开发者 | Ben's Blog
       
     </title>
     <meta name="description" content="编码，巩固，检索" />
@@ -58,10 +58,7 @@
           href='/css/layout.css' />
     
     
-  
-  <link rel="stylesheet"
-        type="text/css"
-        href='/css/index.css'/>
+  <link rel="stylesheet" type="text/css" href="/css/category.css" />
 
   <meta name="generator" content="Hexo 6.3.0"></head>
   <body>
@@ -146,96 +143,54 @@
     </div>
     <div class="body">
       
-  <div class="wall wall-index">
-    <div class="wall-main" id="wall-main">
-      <div class="wall-title">BEN'S BLOG</div>
-      <div class="wall-subtitle">云木的主页</div>
-      <div class="wall-description">“编码，间隔重复，检索”</div>
-    </div>
-    <div class="wall-bg">
-      <div class="wall-bg-index">
-        <div class="hello-world">
-          <div>> Hello world</div>
-          <div class="cursor"></div>
-        </div>
-        <div class="normal-eqt">
-          <img alt="normal" width="300px" height="" src="/images/normal.svg"/>
-        </div>
-        <canvas width="400" height="400" id="heart-curve"></canvas>
-        <div class="motto">长风破浪会有时！</div>
-        <div class="poem">
-          
-            君不见高堂明镜悲白发
-            <br/>
-          
-            朝如青丝暮成雪
-            <br/>
-          
-        </div>
+  <div class="wall wall-category--plain">
+    <div class="wall-main">
+      <div class="wall-category-title">
+        <div class="title-icon"
+             style="background-image: url(/images/icon/icon-code.svg)"></div>
+        开发者
+      </div>
+      <div class="wall-category-description">记录计算机科学及软件项目开发的知识和经验</div>
+      <div class="wall-category-tags">
+        <div id="tags-outer"></div>
       </div>
     </div>
   </div>
-  <div class="about">
-    <div class="about-photo"
-         style="background-image: url(/images/about-dark.jpg)"></div>
-    <div class="about-text">
-      <div class="about-title">
-        
-          <div class="matts">我</div>
-        
-      </div>
-      <div class="about-detail">
-        <div class="about-text-p">
-          
-            
-              人类的八十亿分之一，宇宙的尘埃
-              <br/>
-            
-          
-        </div>
-      </div>
+  <div class="post-list">
+    
+      
+  
+  <div class="post-card">
+    <div class="post__head">
+      <a href="/archives/2024/0/" class="post-title hover-line">Hello World!</a>
+      
+    </div>
+    <div class="post__body">
+      
+        <a href="/archives/2024/0/"
+           class="post-cover"
+           style="background-image: url(/assets/images/0-1.jpg)"></a>
+      
+      <div class="post-excerpt"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very
+first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for
+more info. If you get any problems when using Hexo, you can find the
+answer in <a
+target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or
+you can ask me on <a
+target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p></div>
+    </div>
+    <div class="post__foot">
+      <div class="post-tags">
+  
+
+</div>
     </div>
   </div>
-  
-    <div class="timeline">
-      <div class="timeline-head">
-        <div class="title">时间线</div>
-        <div class="radio-wrapper">
-          
-            <div class="radio">
-              <input id="radio-article"
-                     type="checkbox"
-                     checked/>
-              <label class="radio-skin--article" for="radio-article"></label>
-            </div>
-          
-            <div class="radio">
-              <input id="radio-app"
-                     type="checkbox"
-                     checked/>
-              <label class="radio-skin--app" for="radio-app"></label>
-            </div>
-          
-            <div class="radio">
-              <input id="radio-event"
-                     type="checkbox"
-                     checked/>
-              <label class="radio-skin--event" for="radio-event"></label>
-            </div>
-          
-        </div>
-      </div>
-      <div class="timeline-body">
-        <div class="timeline-item-first">
-          <div class="line-anchor line-anchor--now"></div>
-        </div>
-        <div class="timeline-list" id="timeline-list"></div>
-        <div class="timeline-item-last">
-          <div class="line-anchor line-anchor--end"></div>
-        </div>
-      </div>
-    </div>
-  
+
+
+    
+    
+  </div>
 
     </div>
     <div class="foot">
@@ -326,190 +281,6 @@
       <script>searchInitialize("/search.json")</script>
     
     
-  <script type="text/javascript">
-  function HeartCurve(w, h) {
-    this.w = w;
-    this.h = h;
-    this.a = undefined;
-    this.ctx = undefined;
-    this.deg = 0;
-    this.speed = 0.4;
-    this.isPause = false;
-    this.init();
-  }
-  HeartCurve.prototype.init = function () {
-    const {
-      w,
-      h
-    } = this;
-    const canvas = document.querySelector('#heart-curve');
-    if (!canvas) throw Error('no canvas element!');
-
-    this.ctx = canvas.getContext('2d');
-    this.ctx.translate(2 * w / 3, h / 2);
-    this.ctx.lineJoin = 'round';
-    this.a = w / 6.2;
-    this.id = null;
-    return this;
-  };
-  HeartCurve.prototype._drawAxis = function () {
-    const {
-      ctx,
-      w,
-      h
-    } = this;
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = "#999";
-    ctx.beginPath();
-    ctx.moveTo(-w * 2 / 3, 0);
-    ctx.lineTo(w / 3, 0);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(0, -h * 0.48);
-    ctx.lineTo(0, h * 0.48);
-    ctx.stroke();
-  };
-  HeartCurve.prototype._drawCure = function () {
-    const {
-      ctx,
-      a
-    } = this;
-    ctx.beginPath();
-    let x, y, deg = 0;
-    ctx.moveTo(0, 0);
-    ctx.strokeStyle = "#ff0000";
-    while (deg <= 360) {
-      const theta = deg / 180 * Math.PI;
-      r = 2 * a * (1 - Math.cos(theta));
-      x = r * Math.cos(theta);
-      y = r * Math.sin(theta);
-      ctx.lineTo(x, y);
-      deg++;
-    }
-    ctx.stroke();
-  };
-  HeartCurve.prototype.spin = function () {
-    let {
-      a,
-      w,
-      h,
-      deg,
-      ctx
-    } = this;
-    if (deg >= 360) deg = 0;
-
-    ctx.clearRect(-w / 3 * 2, -h / 2, w, h);
-    const theta = deg / 180 * Math.PI;
-    this._drawAxis();
-    ctx.lineWidth = 2;
-    this._drawCure();
-    ctx.strokeStyle = "#000";
-    ctx.beginPath();
-    ctx.arc(-a, 0, a, 0, 2 * Math.PI);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.arc(2 * a * Math.cos(theta) - a, 2 * a * Math.sin(theta), a, 0, 2 * Math.PI);
-    ctx.stroke();
-    ctx.beginPath();
-    let r = 2 * a * (1 - Math.cos(theta));
-    let x = r * Math.cos(theta);
-    let y = r * Math.sin(theta);
-    ctx.arc(x, y, 3, 0, 2 * Math.PI);
-    ctx.fill();
-    if (this.isPause) return;
-
-    this.deg = deg + this.speed;
-    this.id = window.requestAnimationFrame(this.spin.bind(this));
-  };
-  HeartCurve.prototype.pause = function () {
-    this.isPause = true;
-    if (window.cancelAnimationFrame) {
-      window.cancelAnimationFrame(this.id);
-    }
-  };
-  HeartCurve.prototype.resume = function () {
-    this.isPause = false;
-    this.spin();
-  };
-
-  (function () {
-    const heartCurve = new HeartCurve(400, 400);
-    heartCurve.spin();
-    mobileAdjust(window.matchMedia("(hover:none"));
-    window.matchMedia("(hover:none)").addListener(mobileAdjust);
-
-    function mobileAdjust(media) {
-      const wallEl = document.querySelector('#wall-main')
-      if (!media.matches) {
-        heartCurve.pause();
-        wallEl.addEventListener('mouseenter', () => {
-          console.log('resume');
-          heartCurve.resume();
-        });
-        wallEl.addEventListener('mouseleave', () => {
-          console.log('pause');
-          heartCurve.pause();
-        });
-      }
-    }
-  })();
-</script>
-  
-  
-  <script type="text/javascript">
-    const timelineData = {"types":["article","app","event"],"posts":[{"title":"Hello World!","path":"/archives/2024/0/","icon":"/images/icon/icon-article.svg","type":"article","date":"2024-04-13"}]}
-    const {types, posts} = timelineData
-    listEl = document.querySelector("#timeline-list");
-
-    elRefs = getElRefs(types)
-    bindListener(types, elRefs)
-
-    setTimeout(init.bind(this, types, elRefs))
-
-    function getElRefs(types) {
-      return types.map(type => document.querySelector(`#radio-${type}`))
-    }
-
-    function bindListener(names, els) {
-      names.map((name, i) => els[i].addEventListener('change', e => updateList(name, e.target.checked)))
-    }
-
-    function updateList(type, value) {
-      listDom
-        .filter(line => line.type === type)
-        .forEach(line => {
-          line.el.className = line
-            .el
-            .className
-            .replace(
-              /(--hidden)?$/, value
-              ? ""
-              : "--hidden");
-        });
-    }
-
-    const listDom = posts.map(t => getLine(t));
-    listEl.append(...listDom.map(i => i.el));
-
-    function getLine(data) {
-      const item = document.createElement("DIV");
-      item.className = `timeline-item-${data.type} timeline-item--hidden`;
-      item.innerHTML = `
-                          <div class="line-date">
-                          <div class="line-date-tag">${data.date}</div></div>
-                          <div class="line-anchor"></div>
-                          <div class="line-title">
-                              <img class="text-icon" src="${data.icon}" /><a class="timeline-post" href="${data.path}">${data.title}</a>
-                          </div>
-                          `;
-      return {el: item, type: data.type};
-    };
-
-    function init(names, els) {
-      names.map((name, i) => updateList(name, els[i].checked))
-    }
-  </script>
-
   
 
   </body>

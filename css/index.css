@@ -97,6 +97,7 @@
   background: url("") center center/cover no-repeat;
   margin: 0 10px;
   transition: all 200ms ease-out;
+  border-radius: 3rem;
 }
 .about-photo:hover {
   box-shadow: 0 0 14px 0 #eee;
