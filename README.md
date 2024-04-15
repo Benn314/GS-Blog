@@ -64,10 +64,19 @@ hexo d
 
 - 全文搜索快捷键支持 `Ctrl I`
 
+- [hexo搭载gitalk如何做到不同文章评论区互不干扰，目前来看评论会在多个地址同时出现 #569](https://github.com/gitalk/gitalk/issues/569) 该问题在新版 gitalk 中已被修复
+
+  本地评论文章会被重定向至线上环境，只有在线上环境才能进行评论并保存到仓库 issue
+
+  需要推送代码后才会初始化新文章的 gitalk issue
+
+- 支持相关文章
+
+<br />
+
 - [ ] 图像预览（暂时不做）
-
 - [x] 超链接hover颜色更改
-
-- [ ] gitalk 评论
-
-- [ ] 部署到 vercel 并绑定域名
+- [x] gitalk 评论
+- [x] 部署到 vercel 并绑定域名
+- [ ] 图片懒加载
+- [x] feat: 图片向上渐显飞入的入场动画？

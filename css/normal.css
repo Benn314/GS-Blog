@@ -68,3 +68,46 @@ figure img {
   margin: 0 auto;
   max-width: 100%;
 }
+.post-content__body img {
+  animation: fade-in-up 0.8s ease-in-out;
+}
+@-moz-keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(3.8rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(3.8rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@-o-keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(3.8rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(3.8rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
