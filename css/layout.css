@@ -20,6 +20,9 @@ a {
 a:hover {
   color: #222;
 }
+.post-content__body a:hover {
+  color: #e4b2d1;
+}
 blockquote {
   border-left: 4px solid #ddd;
   margin: 0;
@@ -685,6 +688,9 @@ mjx-container {
 .foot-link {
   display: inline-block;
   padding-left: 8px;
+}
+.foot-link:hover {
+  color: #909090;
 }
 .copyright {
   display: flex;

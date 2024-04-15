@@ -20,6 +20,9 @@ a {
 a:hover {
   color: #222;
 }
+.post-content__body a:hover {
+  color: #e4b2d1;
+}
 blockquote {
   border-left: 4px solid #ddd;
   margin: 0;
