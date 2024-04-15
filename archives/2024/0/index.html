@@ -59,7 +59,7 @@
     
     
   <link rel="stylesheet" type="text/css" href="/css/post.css"/>
-  
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css"/>
 
   <meta name="generator" content="Hexo 6.3.0"></head>
   <body>
@@ -166,8 +166,8 @@
         <p>今天，我毕业了。</p>
 <span id="more"></span>
 <center>
-<style>.ykrvgfgwryum{zoom:33%;}</style>
-<img src="/archives/2024/0/0-1.jpg" class="ykrvgfgwryum">
+<style>.wbtvwrsjtctp{zoom:33%;}</style>
+<img src="/archives/2024/0/0-1.jpg" class="wbtvwrsjtctp">
 </center>
 <blockquote>
 <p>照片是 X 上关注的一位博主 <a
@@ -237,6 +237,8 @@ class="math inline">\(e^{\frac{\sqrt{2x}}{3}}\)</span></p>
 </div>
 
     
+    
+      <div id="gitalk-container"></div>
     
   </div>
 
@@ -324,6 +326,14 @@ class="math inline">\(e^{\frac{\sqrt{2x}}{3}}\)</span></p>
       <script>searchInitialize("/search.json")</script>
     
     
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  const param = JSON.parse('{"enable":true,"owner":"Benn314","admin":"Benn314","repo":"GS-Blog","clientID":"7ab34e238658d1b4836c","clientSecret":"6030d754bcd177fb8467f2545e31afb6ec3c8992","labels":"gitalk","distractionFreeMode":false,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-CN"}')
+  param.id = location.pathname
+  const gitalk = new Gitalk(param)
+  gitalk.render('gitalk-container')
+</script>
+
   
 
   </body>
